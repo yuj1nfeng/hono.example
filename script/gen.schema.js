@@ -1,8 +1,8 @@
 import utils from '#utils';
 import fs from 'node:fs/promises';
 
-const model_dir = '.db';
-const output_dir = `.schema`;
+const model_dir = process.env['SEQUELIZE_SCHEMA_DIR'];
+const output_dir = process.env['VALIDATE_SCHEMA_DIR'];
 
 await fs.mkdir(output_dir, { recursive: true });
 

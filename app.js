@@ -6,7 +6,7 @@ import '#sequelize.ext';
 import '#hono.ext';
 import utils from '#utils';
 
-await utils.sequelize.defineModelsFromYaml('.db');
+await utils.sequelize.defineModelsFromYaml(process.env['SEQUELIZE_SCHEMA_DIR']);
 
 
 const app = new Hono();

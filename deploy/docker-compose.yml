@@ -1,0 +1,96 @@
+services:
+  redis:
+    image: bitnami/redis:8.2.1
+    container_name: redis
+    ports:
+      - '6379:6379'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - redis_data:/bitnami/redis/data
+  mongo:
+    image: bitnami/mongodb:8.0.13
+    container_name: mongo
+    ports:
+      - '27017:27017'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - mongo_data:/bitnami/mongodb/data
+  etcd:
+    image: bitnami/etcd:3.6.4
+    container_name: etcd
+    ports:
+      - '2379:2379'
+      - '2380:2380'
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379
+    # volumes:
+    # - ${ETCD_CONFIG_FILE}:/opt/bitnami/etcd/conf/etcd.conf.yml
+  postgres:
+    image: bitnami/postgresql:17.6.0
+    container_name: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRESQL_USERNAME=${POSTGRESQL_USERNAME}
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+    volumes:
+      - postgres_data:/bitnami/postgresql
+  mysql:
+    image: bitnami/mysql:9.4.0
+    container_name: mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - mysql_data:/bitnami/mysql
+  rabbitmq:
+    image: bitnami/rabbitmq:4.1
+    container_name: rabbitmq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    environment:
+      - RABBITMQ_USERNAME=${RABBITMQ_USERNAME}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
+      - RABBITMQ_MANAGEMENT_ALLOW_WEB_ACCESS=yes
+    volumes:
+      - rabbitmq_data:/bitnami/rabbitmq/mnesia
+  rustfs:
+    image: rustfs/rustfs:latest
+    container_name: rustfs
+    ports:
+      - '9000:9000'
+    environment:
+      - RUSTFS_ACCESS_KEY=${RUSTFS_ACCESS_KEY}
+      - RUSTFS_SECRET_KEY=${RUSTFS_SECRET_KEY}
+      - RUSTFS_CONSOLE_ENABLE=${RUSTFS_CONSOLE_ENABLE}
+      - RUSTFS_MEMORY_LIMIT=512MB
+      - RUSTFS_CACHE_SIZE=256MB
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    volumes:
+      - rustfs_data:/data
+
+volumes:
+  redis_data:
+    driver: local
+  mongo_data:
+    driver: local
+  postgres_data:
+    driver: local
+  mysql_data:
+    driver: local
+  rabbitmq_data:
+    driver: local
+  rustfs_data:
+    driver: local
