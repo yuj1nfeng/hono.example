@@ -5,18 +5,18 @@
       "name": "hono.example",
       "dependencies": {
         "yaml": "^2.8.1",
-        "yujf-ffmpeg": "^1.0.9",
-        "yujf-hono.ext": "^1.0.0",
-        "yujf-mock.yaml": "^3.0.9",
-        "yujf-sequelize.ext": "^1.0.0",
-        "yujf-utils": "^3.0.8",
+        "yujf-ffmpeg": "^1.0.10",
+        "yujf-hono.ext": "^1.0.1",
+        "yujf-mock.yaml": "^3.0.10",
+        "yujf-sequelize.ext": "^1.0.1",
+        "yujf-utils": "^3.0.11",
         "zod": "^4.1.5",
       },
       "devDependencies": {
         "@types/bun": "latest",
       },
       "peerDependencies": {
-        "typescript": "^5",
+        "typescript": "^5.9.2",
       },
     },
   },
@@ -369,15 +369,15 @@
 
     "yargs-parser": ["yargs-parser@21.1.1", "", {}, "sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw=="],
 
-    "yujf-ffmpeg": ["yujf-ffmpeg@1.0.9", "", { "peerDependencies": { "typescript": "^5" } }, "sha512-Tr4bVvIADeO/9DWiND7KYFq2MKTTFoBsPAssZRSwPS7o4IIbDjLWjxw4aNMn/WvJWTuSDXrJRRhUKjHwkqfdpQ=="],
+    "yujf-ffmpeg": ["yujf-ffmpeg@1.0.10", "", { "peerDependencies": { "typescript": "^5" } }, "sha512-UKeSP5RyINoTTUfvIVA6UherOZy62IjGmh0xeZEjprf7fVq4FfeKGQmPOCu5MWhlIbsRaDBpZvw0aTOq4lEfww=="],
 
-    "yujf-hono.ext": ["yujf-hono.ext@1.0.0", "", { "dependencies": { "hono": "^4.9.5" } }, "sha512-7/kr6/9egO++c+LKxx8UnPJxRvsVsqAi9rvpUzKnAyketTMOmQ4wbvpqx4CcstpH9sAFzTEbv7HIfPFvx5UW6w=="],
+    "yujf-hono.ext": ["yujf-hono.ext@1.0.1", "", { "dependencies": { "hono": "^4.9.5" } }, "sha512-5CO/8FRLM7oUTj2Lrt4CJO/btpw7thulIReEmoqp7d52t7GiD+/PFQIooItGkdZzTWS5unkSKlAi3ZB/lzbcnQ=="],
 
-    "yujf-mock.yaml": ["yujf-mock.yaml@3.0.9", "", { "dependencies": { "@types/js-yaml": "^4.0.9", "js-yaml": "^4.1.0", "mockjs-extend": "^1.7.0" } }, "sha512-9E90ZBBeI38ziG56GizZhQduz5zNMhy88MNd3s5/aO5M3NY9Hk+O3RuHgS1kshXBpUn2HJ9l0d134eCER2ayDQ=="],
+    "yujf-mock.yaml": ["yujf-mock.yaml@3.0.10", "", { "dependencies": { "@types/js-yaml": "^4.0.9", "js-yaml": "^4.1.0", "mockjs-extend": "^1.7.0" } }, "sha512-qm72PqsJx+7oPNZ1WYSCmgA5oazyhw1VSAVQR/P5NS0j72ynroZS0z7sjAiuwz9ouw6uF6Aes3zI5uiiaFdVZg=="],
 
-    "yujf-sequelize.ext": ["yujf-sequelize.ext@1.0.0", "", { "dependencies": { "@sequelize/core": "^7.0.0-alpha.46" } }, "sha512-qHE5bikFOxJAC7uGOP19ii2GHugIa9XjC2YlfBJkkb2vEaeH1Lp6jjRnGhmpJx3dGrK1I5KA0p2xzbDMxW4o/w=="],
+    "yujf-sequelize.ext": ["yujf-sequelize.ext@1.0.1", "", { "dependencies": { "@sequelize/core": "^7.0.0-alpha.46", "yaml": "^2.8.1" } }, "sha512-4vhbXq1NCLrniJl5AQXh2QRotmjS7IbOYzRVJpn/UsjhpupLyaC5iQOEMenArXGjemqXGF2MmC1fiS5pzupazA=="],
 
-    "yujf-utils": ["yujf-utils@3.0.8", "", { "dependencies": { "@sequelize/core": "^7.0.0-alpha.46", "@sequelize/postgres": "^7.0.0-alpha.46", "amqplib": "^0.10.9", "etcd3": "^1.1.2", "mongodb": "^6.19.0", "tencentcloud-sdk-nodejs": "^4.1.112" } }, "sha512-AWuTd+o+htisE760wzoRL832sPphZxOK/wyWKfUmqK+TjXceH7FLBB1T3OeSs2gvXAUAFSm2APgd5cTzCCyDvQ=="],
+    "yujf-utils": ["yujf-utils@3.0.11", "", { "dependencies": { "@sequelize/core": "^7.0.0-alpha.46", "@sequelize/postgres": "^7.0.0-alpha.46", "amqplib": "^0.10.9", "etcd3": "^1.1.2", "mongodb": "^6.19.0", "tencentcloud-sdk-nodejs": "^4.1.112" } }, "sha512-ToPgHqSi9Cd6eY9kI6wr9B9N7myr8I+3hPnpmXJ6Wk1IuNBy/z/xXjvNlA1UUUGCy6uggvRCKgrG2o29IwYpeQ=="],
 
     "zod": ["zod@4.1.5", "", {}, "sha512-rcUUZqlLJgBC33IT3PNMgsCq6TzLQEG/Ei/KTCU0PedSWRMAXoOUN+4t/0H+Q8bdnLPdqUYnvboJT0bn/229qg=="],
 
