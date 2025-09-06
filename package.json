@@ -1,0 +1,39 @@
+{
+    "name": "hono.example",
+    "module": "index.ts",
+    "type": "module",
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "imports": {
+        "#utils": "yujf-utils",
+        "#ffmpeg": "yujf-ffmpeg",
+        "#mock.yaml": "yujf-mock.yaml",
+        "#sequelize.ext": "yujf-sequelize.ext",
+        "#hono.ext": "yujf-hono.ext"
+    },
+    "dependencies": {
+        "yaml": "^2.8.1",
+        "yujf-ffmpeg": "^1.0.9",
+        "yujf-hono.ext": "^1.0.0",
+        "yujf-mock.yaml": "^3.0.9",
+        "yujf-sequelize.ext": "^1.0.0",
+        "yujf-utils": "^3.0.8",
+        "zod": "^4.1.5"
+    },
+    "scripts": {
+        "mock": "bun script/mock.js",
+        "db.pull": "bun script/db.pull.js",
+        "db.push": "bun script/db.push.js",
+        "test.report": "bun test --coverage --smol --reporter=junit --reporter-outfile=report.junit.xml",
+        "stress-testing": "wrk -d 60s http://127.0.0.1:9999",
+        "gen.schema": "bun script/gen.schema.js",
+        "gen.mock": "bun script/gen.mock.js",
+        "init": "bun db.pull && bun gen.schema && bun gen.mock",
+        "colors": "bun script/colors.js"
+    },
+    "private": true
+}

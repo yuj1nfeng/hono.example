@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>页面未找到 | CNB平台</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <!-- 动态SVG插图 -->
+                <div class="mb-10 animate-float">
+                    <svg class="w-64 h-64 mx-auto" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#3B82F6" d="M50,-50C62.3,-36.1,67.5,-18,66.7,-0.7C65.9,16.6,59.1,33.2,46.8,45.8C34.5,58.4,16.7,67.1,-2.3,69.4C-21.3,71.7,-42.6,67.7,-56.4,55.1C-70.2,42.6,-76.5,21.3,-75.8,0.9C-75.1,-19.6,-67.4,-39.2,-53.6,-53.1C-39.8,-67,-19.9,-75.2,-0.2,-75C19.6,-74.8,39.2,-66.2,50,-50Z" transform="translate(100 100)" />
+                        <text x="100" y="120" font-family="Arial" font-size="20" text-anchor="middle" fill="white">404</text>
+                    </svg>
+                </div>
+
+                <!-- 主内容 -->
+                <h1 class="text-5xl font-bold text-gray-800 mb-4">页面迷路了</h1>
+                <p class="text-xl text-gray-600 mb-8">您访问的页面不存在或已被移除</p>
+
+                <!-- 交互按钮 -->
+                <div class="flex justify-center space-x-4">
+                    <a href="/" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300"> 返回首页 </a>
+                    <a href="mailto:support@cnb.com" class="border border-blue-600 text-blue-600 font-medium py-3 px-6 rounded-lg hover:bg-blue-50 transition duration-300"> 联系支持 </a>
+                </div>
+
+                <!-- 附加信息 -->
+                <div class="mt-12 text-sm text-gray-500">
+                    <p>错误代码: 404_NOT_FOUND</p>
+                    <p class="mt-2">© 2025 CNB平台 - 版本 v2.1.0</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // 添加微交互效果
+            document.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('mouseenter', () => {
+                    link.classList.add('transform', 'scale-105');
+                });
+                link.addEventListener('mouseleave', () => {
+                    link.classList.remove('transform', 'scale-105');
+                });
+            });
+        </script>
+    </body>
+</html>
